@@ -17,7 +17,7 @@
       })
       .state("collection", {
         url: "/collection",
-        templateUrl: "/templates/album.html"
+        templateUrl: "/templates/collection.html"
       });
   }
   angular
