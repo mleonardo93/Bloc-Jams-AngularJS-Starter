@@ -1,12 +1,9 @@
 (function() {
-  function AlbumCtrl() {
-    this.albumData = Object.assign({}, albumPicasso);
-    this.songs = []
-    // thinking about using a loop to fill an array with song data objects
-    
+  function AlbumCtrl(Fixtures) {
+    this.albumData = Fixtures.getAlbum();    
   }
 
   angular
     .module("blocJams")
-    .controller("AlbumCtrl", AlbumCtrl);
+    .controller("AlbumCtrl", ["Fixtures", AlbumCtrl]);
 })();
