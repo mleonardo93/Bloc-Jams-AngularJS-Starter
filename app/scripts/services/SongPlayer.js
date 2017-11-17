@@ -4,6 +4,7 @@
 
           var currentSong = null;
           var currentBuzzObject = null;
+
           /**
           * @function setSong
           * @desc Stops currently playing song and loads new audio file as currentBuzzObject
@@ -28,22 +29,32 @@
             currentSong = song;
           };
 
-          SongPlayer.play = function(song) {
-            if (currentSong !== song) {
-              setSong(song);
-              currentBuzzObject.play();
-              song.playing = true;
-            } else if (currentSong === song) {
-              if (currentBuzzObject.isPaused()) {
-                currentBuzzObject.play();
-              }
-            }
+          /**
+          * @function playSong
+          * @desc Calls setSong and plays currrentBuzzObject
+          * @param {Object} song
+          */
+
+          var playSong = function(song) {
+            setSong(song);
+            currentBuzzObject.play();
+            song.playing = true;
           };
 
-          SongPlayer.pause = function(song) {
+          /**
+          * @function play
+          * @desc Public access for private functions
+          * @param {Object} song
+          */
+
+          SongPlayer.play = function(song) {
+            playSong(song);
+          }
+
+            SongPlayer.pause = function(song) {
             currentBuzzObject.pause();
             song.playing = false;
-          }
+          };
 
           return SongPlayer;
      }
