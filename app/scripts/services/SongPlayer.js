@@ -53,6 +53,7 @@
             });
 
             SongPlayer.currentSong = song;
+            song.playing = true;
           };
 
           /**
@@ -73,7 +74,7 @@
 
           var stopSong = function(song) {
             currentBuzzObject.stop();
-            song.playing = null;
+            SongPlayer.currentSong.playing = false;
           }
 
           /**
