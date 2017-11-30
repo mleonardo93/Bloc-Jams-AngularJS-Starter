@@ -77,17 +77,15 @@
                });
             };
 
+            /**
+            * @function thumbStyle
+            * @desc Sets thumb position in CSS to percent of song completed
+            * @param none
+            */
+
             scope.thumbStyle = function() {
-              var value = scope.value;
-              var max = scope.max;
-              var percent = (value / max) * 100;
-              scope.$watch("percentString()", function(oldVal, newVal){
-                if(oldVal !== newVal){
-                  return {"left": percent};
-                } else {
-                  return;
-                }
-              });
+                return {"left": percentString()};
+
             };
           }
       };
