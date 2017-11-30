@@ -6,7 +6,9 @@
       if (Number.isNaN(seconds)) {
         return "-:--";
       }
-      var wholeSeconds = Math.floor(seconds);
+
+
+      /**var wholeSeconds = Math.floor(seconds);
       var minutes = Math.floor(wholeSeconds/60);
       var remainingSeconds = wholeSeconds % 60;
 
@@ -16,7 +18,9 @@
         output += "0";
       }
 
-      output += remainingSeconds;
+      output += remainingSeconds;*/
+
+      output = buzz.toTimer(seconds);
 
       return output;
     };
