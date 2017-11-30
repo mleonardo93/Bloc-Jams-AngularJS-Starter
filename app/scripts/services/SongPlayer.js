@@ -54,7 +54,7 @@
 
             currentBuzzObject.bind("timeupdate", function() {
               $rootScope.$apply(function() {
-                SongPlayer.currentTime = Math.floor(currentBuzzObject.getTime());
+                SongPlayer.currentTime = currentBuzzObject.getTime();
               })
             })
 
