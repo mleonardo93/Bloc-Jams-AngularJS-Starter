@@ -54,7 +54,7 @@
 
             currentBuzzObject.bind("timeupdate", function() {
               $rootScope.$apply(function() {
-                SongPlayer.currentTime = currentBuzzObject.getTime();
+                SongPlayer.currentTime = Math.floor(currentBuzzObject.getTime());
               })
             })
 
@@ -166,6 +166,25 @@
             }
           };
 
+          /**
+          * @function setVolume
+          * @desc Set volume of currently playing song
+          * @param {Number} volume
+          */
+
+          SongPlayer.setVolume = function(value) {
+            if(currentBuzzObject) {
+              currentBuzzObject.setVolume(value);
+              SongPlayer.volume = value
+            }
+          }
+
+          /**
+          * @desc Current volume
+          * @type {number}
+          */
+
+          SongPlayer.volume = 50;
 
           /**
           * @desc Active song object (from list of songs)
@@ -175,7 +194,7 @@
           SongPlayer.currentSong = null;
 
           /**
-          * @desc CUrrent playback time (in seconds) of currently playing song
+          * @desc Current playback time (in seconds) of currently playing song
           * @type {number}
           */
 

@@ -109,7 +109,6 @@
 
             scope.thumbStyle = function() {
                 return {"left": percentString()};
-
             };
           }
       };
