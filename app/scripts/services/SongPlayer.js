@@ -58,7 +58,7 @@
 
           /**
           * @function playSong
-          * @desc Plays currrentBuzzObject
+          * @desc Plays currentBuzzObject
           * @param {Object} song
           */
 

@@ -47,7 +47,7 @@
             * @param percentString function
             */
             scope.fillStyle = function() {
-                return {width: percentString()};
+                return {"width": percentString()};
             };
             /**
             * @function onClickSeekBar
@@ -75,6 +75,19 @@
                    $document.unbind('mousemove.thumb');
                    $document.unbind('mouseup.thumb');
                });
+            };
+
+            scope.thumbStyle = function() {
+              var value = scope.value;
+              var max = scope.max;
+              var percent = (value / max) * 100;
+              scope.$watch("percentString()", function(oldVal, newVal){
+                if(oldVal !== newVal){
+                  return {"left": percent};
+                } else {
+                  return;
+                }
+              });
             };
           }
       };
